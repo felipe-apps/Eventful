@@ -14,6 +14,8 @@
 		02E9C58C28429D2F002A4253 /* Eventful.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02E9C58A28429D2F002A4253 /* Eventful.xcdatamodeld */; };
 		02E9C58E28429D32002A4253 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02E9C58D28429D32002A4253 /* Assets.xcassets */; };
 		02E9C59128429D32002A4253 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02E9C58F28429D32002A4253 /* LaunchScreen.storyboard */; };
+		02E9C5992842C01A002A4253 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02E9C5982842C01A002A4253 /* GoogleService-Info.plist */; };
+		703348078DF87B0665107DD8 /* Pods_Eventful.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8514A8220686BBDBF7E555 /* Pods_Eventful.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		02E9C58D28429D32002A4253 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02E9C59028429D32002A4253 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02E9C59228429D32002A4253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02E9C5982842C01A002A4253 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		450C6264FC23D18163270047 /* Pods-Eventful.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eventful.release.xcconfig"; path = "Target Support Files/Pods-Eventful/Pods-Eventful.release.xcconfig"; sourceTree = "<group>"; };
+		6D8514A8220686BBDBF7E555 /* Pods_Eventful.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eventful.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA3799F107452DE7A1A8B0FE /* Pods-Eventful.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eventful.debug.xcconfig"; path = "Target Support Files/Pods-Eventful/Pods-Eventful.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				703348078DF87B0665107DD8 /* Pods_Eventful.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +51,8 @@
 			children = (
 				02E9C58028429D2F002A4253 /* Eventful */,
 				02E9C57F28429D2F002A4253 /* Products */,
+				F54FB27F1165B7FBA120CDA5 /* Pods */,
+				0DA6AE5B8A04E9E917DC39DB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,9 +74,28 @@
 				02E9C58D28429D32002A4253 /* Assets.xcassets */,
 				02E9C58F28429D32002A4253 /* LaunchScreen.storyboard */,
 				02E9C59228429D32002A4253 /* Info.plist */,
+				02E9C5982842C01A002A4253 /* GoogleService-Info.plist */,
 				02E9C58A28429D2F002A4253 /* Eventful.xcdatamodeld */,
 			);
 			path = Eventful;
+			sourceTree = "<group>";
+		};
+		0DA6AE5B8A04E9E917DC39DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D8514A8220686BBDBF7E555 /* Pods_Eventful.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F54FB27F1165B7FBA120CDA5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA3799F107452DE7A1A8B0FE /* Pods-Eventful.debug.xcconfig */,
+				450C6264FC23D18163270047 /* Pods-Eventful.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02E9C59528429D32002A4253 /* Build configuration list for PBXNativeTarget "Eventful" */;
 			buildPhases = (
+				4870BE9607788B23EAA4137B /* [CP] Check Pods Manifest.lock */,
 				02E9C57A28429D2F002A4253 /* Sources */,
 				02E9C57B28429D2F002A4253 /* Frameworks */,
 				02E9C57C28429D2F002A4253 /* Resources */,
+				4C9C72CD1A66A1B6CE0E9149 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,6 +158,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02E9C5992842C01A002A4253 /* GoogleService-Info.plist in Resources */,
 				02E9C59128429D32002A4253 /* LaunchScreen.storyboard in Resources */,
 				02E9C58E28429D32002A4253 /* Assets.xcassets in Resources */,
 				02E9C58928429D2F002A4253 /* Main.storyboard in Resources */,
@@ -135,6 +166,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4870BE9607788B23EAA4137B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Eventful-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C9C72CD1A66A1B6CE0E9149 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Eventful/Pods-Eventful-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Eventful/Pods-Eventful-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Eventful/Pods-Eventful-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		02E9C57A28429D2F002A4253 /* Sources */ = {
@@ -220,7 +293,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -274,7 +347,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -286,16 +359,19 @@
 		};
 		02E9C59628429D32002A4253 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA3799F107452DE7A1A8B0FE /* Pods-Eventful.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7GZTFJ44QJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Eventful/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -303,26 +379,29 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = felipe.Eventful;
+				PRODUCT_BUNDLE_IDENTIFIER = com.felipe.Eventful;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		02E9C59728429D32002A4253 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 450C6264FC23D18163270047 /* Pods-Eventful.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7GZTFJ44QJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Eventful/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -330,11 +409,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = felipe.Eventful;
+				PRODUCT_BUNDLE_IDENTIFIER = com.felipe.Eventful;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
