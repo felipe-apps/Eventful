@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseAuth
+import FirebaseDatabase
+import FirebaseStorage
 
-class ViewController: UIViewController {
+class HomeViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
