@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02C792782843DAFE007AAD12 /* IngressosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C792762843DAFE007AAD12 /* IngressosViewController.swift */; };
+		02C7927C2843DB2B007AAD12 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C7927A2843DB2B007AAD12 /* HomeViewController.swift */; };
+		02C792802843DBF1007AAD12 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C7927F2843DBF1007AAD12 /* PerfilViewController.swift */; };
+		02C792832843E7FD007AAD12 /* LoadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C792822843E7FD007AAD12 /* LoadData.swift */; };
+		02C792892844128E007AAD12 /* EventoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C792882844128E007AAD12 /* EventoTableViewCell.swift */; };
 		02E9C58228429D2F002A4253 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E9C58128429D2F002A4253 /* AppDelegate.swift */; };
 		02E9C58428429D2F002A4253 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E9C58328429D2F002A4253 /* SceneDelegate.swift */; };
-		02E9C58628429D2F002A4253 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E9C58528429D2F002A4253 /* HomeViewController.swift */; };
 		02E9C58928429D2F002A4253 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02E9C58728429D2F002A4253 /* Main.storyboard */; };
 		02E9C58C28429D2F002A4253 /* Eventful.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02E9C58A28429D2F002A4253 /* Eventful.xcdatamodeld */; };
 		02E9C58E28429D32002A4253 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02E9C58D28429D32002A4253 /* Assets.xcassets */; };
@@ -23,10 +27,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02C792762843DAFE007AAD12 /* IngressosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngressosViewController.swift; sourceTree = "<group>"; };
+		02C7927A2843DB2B007AAD12 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		02C7927F2843DBF1007AAD12 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
+		02C792822843E7FD007AAD12 /* LoadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadData.swift; sourceTree = "<group>"; };
+		02C792882844128E007AAD12 /* EventoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventoTableViewCell.swift; sourceTree = "<group>"; };
 		02E9C57E28429D2F002A4253 /* Eventful.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventful.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02E9C58128429D2F002A4253 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02E9C58328429D2F002A4253 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		02E9C58528429D2F002A4253 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		02E9C58828429D2F002A4253 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		02E9C58B28429D2F002A4253 /* Eventful.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Eventful.xcdatamodel; sourceTree = "<group>"; };
 		02E9C58D28429D32002A4253 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,6 +62,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02C7927E2843DBB8007AAD12 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				02E9C58128429D2F002A4253 /* AppDelegate.swift */,
+				02E9C58328429D2F002A4253 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		02C792812843E7D1007AAD12 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				02C792822843E7FD007AAD12 /* LoadData.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		02E9C57528429D2F002A4253 = {
 			isa = PBXGroup;
 			children = (
@@ -75,13 +100,11 @@
 		02E9C58028429D2F002A4253 /* Eventful */ = {
 			isa = PBXGroup;
 			children = (
+				02C7927E2843DBB8007AAD12 /* Delegate */,
 				02F6DE422843B72400B5AB8C /* Model */,
 				02F6DE4D2843D67600B5AB8C /* View */,
 				02F6DE4C2843D66100B5AB8C /* Controller */,
-				02E9C58128429D2F002A4253 /* AppDelegate.swift */,
-				02E9C58328429D2F002A4253 /* SceneDelegate.swift */,
 				02E9C58D28429D32002A4253 /* Assets.xcassets */,
-				02E9C58F28429D32002A4253 /* LaunchScreen.storyboard */,
 				02E9C59228429D32002A4253 /* Info.plist */,
 				02E9C5982842C01A002A4253 /* GoogleService-Info.plist */,
 				02E9C58A28429D2F002A4253 /* Eventful.xcdatamodeld */,
@@ -92,6 +115,7 @@
 		02F6DE422843B72400B5AB8C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				02C792812843E7D1007AAD12 /* Services */,
 				02F6DE432843B73600B5AB8C /* Usuario.swift */,
 				02F6DE472843C2E500B5AB8C /* Evento.swift */,
 				02F6DE492843C41200B5AB8C /* CompraIngresso.swift */,
@@ -103,7 +127,9 @@
 		02F6DE4C2843D66100B5AB8C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				02E9C58528429D2F002A4253 /* HomeViewController.swift */,
+				02C7927A2843DB2B007AAD12 /* HomeViewController.swift */,
+				02C792762843DAFE007AAD12 /* IngressosViewController.swift */,
+				02C7927F2843DBF1007AAD12 /* PerfilViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -112,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				02E9C58728429D2F002A4253 /* Main.storyboard */,
+				02E9C58F28429D32002A4253 /* LaunchScreen.storyboard */,
+				02C792882844128E007AAD12 /* EventoTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -249,11 +277,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02E9C58628429D2F002A4253 /* HomeViewController.swift in Sources */,
 				02E9C58228429D2F002A4253 /* AppDelegate.swift in Sources */,
 				02E9C58C28429D2F002A4253 /* Eventful.xcdatamodeld in Sources */,
 				02F6DE4A2843C41200B5AB8C /* CompraIngresso.swift in Sources */,
+				02C792782843DAFE007AAD12 /* IngressosViewController.swift in Sources */,
+				02C792802843DBF1007AAD12 /* PerfilViewController.swift in Sources */,
 				02F6DE442843B73600B5AB8C /* Usuario.swift in Sources */,
+				02C792832843E7FD007AAD12 /* LoadData.swift in Sources */,
+				02C7927C2843DB2B007AAD12 /* HomeViewController.swift in Sources */,
+				02C792892844128E007AAD12 /* EventoTableViewCell.swift in Sources */,
 				02E9C58428429D2F002A4253 /* SceneDelegate.swift in Sources */,
 				02F6DE482843C2E500B5AB8C /* Evento.swift in Sources */,
 				02F6DE462843C24900B5AB8C /* Cartao.swift in Sources */,

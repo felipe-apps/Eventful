@@ -12,7 +12,14 @@ struct Evento {
     var titulo: String
     var horario: String
     var local: String
-    var descricao: String
-    var valor: Double
+    var descricao: String?
+    var valor: Double?
     var imagem: UIImage?
+    
+    init(titulo: String, horario: String, local: String, imagem: UIImage){
+        self.titulo = titulo
+        self.horario = horario
+        self.local = local
+        self.imagem = imagem
+    }
 }
