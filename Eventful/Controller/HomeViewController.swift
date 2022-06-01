@@ -18,10 +18,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var eventos = [Evento(titulo: "Festa universitaria", horario: "HOJE 14:00", local: "São Paulo, SP", imagem: UIImage(imageLiteralResourceName: "IMG_1065")),
                    Evento(titulo: "Confraternização da empresa", horario: "03/06 16:00", local: "Belo Horizonte, MG", imagem: UIImage(imageLiteralResourceName: "IMG_1066")),
                    Evento(titulo: "Happy hour", horario: "05/06 19:00", local: "Curitiba, PR", imagem: UIImage(imageLiteralResourceName: "IMG_1067"))
-                   
+
     ]
     
-    var ref:DatabaseReference?
+    var ref:DatabaseReference!
     var databaseHandle:DatabaseHandle?
     
     //var eventos = [Evento]()
@@ -32,25 +32,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         
-//        let ref = Database.database().reference(withPath: "Eventos")
-//
-//        ref.observe(.value, with: { snapshot in
-//            // This is the snapshot of the data at the moment in the Firebase database
-//            print(snapshot.value as Any)
-//        })
-
-        // Retrieve the events and listen for changes
-//        ref.child("Eventos").observe(.value, with: { (snapshot) in
-//
-//            // Code to execute when a child is added under "Eventos"
-//            // Take the value from the snapshot and added it to the eventos array
-//
-//                // Append the data to the eventos array
-//            self.eventos.append(evento)
-//
-//            self.tableView.reloadData()
-//
-//        })
+        ref = Database.database().reference()
+        
+        databaseHandle = ref.child("Eventos").observe(.value) { snapshot in
+            for case let child as DataSnapshot in snapshot.children {
+                guard let data = child.value as? [String:Any] else {
+                    print("error")
+                    return
+                }
+                print(data)
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
