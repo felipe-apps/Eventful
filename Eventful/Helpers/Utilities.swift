@@ -12,17 +12,18 @@ class Utilities {
     
     static func styleTextField(_ textField:UITextField) {
         
-        let bottomLine = CALayer()
+        let textFieldStyle = CALayer()
         
-        bottomLine.frame = CGRect(x: 0, y: textField.frame.height - 2, width: textField.frame.width, height: 2)
-        
-        bottomLine.backgroundColor = UIColor.init(red: 48/255, green: 173/255, blue: 99/255, alpha: 1).cgColor
-        
-        // Remove border on text field
+        textFieldStyle.frame = CGRect(x: -20, y: 0, width: textField.frame.width + 20, height: textField.frame.height)
+        textFieldStyle.cornerRadius = 20
+        textFieldStyle.shadowOffset.height = 8
+        textFieldStyle.shadowOffset.width = 4
+        textFieldStyle.shadowRadius = 5
+        textFieldStyle.backgroundColor = UIColor.init(red: 217/255, green: 217/255, blue: 217/255, alpha: 1).cgColor
         textField.borderStyle = .none
         
-        // Add the line to the text field
-        textField.layer.addSublayer(bottomLine)
+        textField.layer.addSublayer(textFieldStyle)
+       
     }
     
     static func styleHollowButton(_ button: UIButton) {
