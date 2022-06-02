@@ -16,9 +16,6 @@ class Utilities {
         
         textFieldStyle.frame = CGRect(x: -20, y: 0, width: textField.frame.width + 20, height: textField.frame.height)
         textFieldStyle.cornerRadius = 20
-        textFieldStyle.shadowOffset.height = 8
-        textFieldStyle.shadowOffset.width = 4
-        textFieldStyle.shadowRadius = 5
         textFieldStyle.backgroundColor = UIColor.init(red: 217/255, green: 217/255, blue: 217/255, alpha: 1).cgColor
         textField.borderStyle = .none
         

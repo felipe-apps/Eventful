@@ -10,21 +10,13 @@ import FirebaseAuth
 import FirebaseCore
 import FirebaseStorage
 import FirebaseDatabase
+import FirebaseFirestore
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
-
-    var eventos = [Evento(titulo: "Festa universitaria", horario: "HOJE 14:00", local: "São Paulo, SP", imagem: UIImage(imageLiteralResourceName: "IMG_1065")),
-                   Evento(titulo: "Confraternização da empresa", horario: "03/06 16:00", local: "Belo Horizonte, MG", imagem: UIImage(imageLiteralResourceName: "IMG_1066")),
-                   Evento(titulo: "Happy hour", horario: "05/06 19:00", local: "Curitiba, PR", imagem: UIImage(imageLiteralResourceName: "IMG_1067"))
-                   
-    ]
     
-    var ref:DatabaseReference?
-    var databaseHandle:DatabaseHandle?
-    
-    //var eventos = [Evento]()
+    var eventos = [Evento]()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,25 +24,22 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         
-//        let ref = Database.database().reference(withPath: "Eventos")
-//
-//        ref.observe(.value, with: { snapshot in
-//            // This is the snapshot of the data at the moment in the Firebase database
-//            print(snapshot.value as Any)
-//        })
-
-        // Retrieve the events and listen for changes
-//        ref.child("Eventos").observe(.value, with: { (snapshot) in
-//
-//            // Code to execute when a child is added under "Eventos"
-//            // Take the value from the snapshot and added it to the eventos array
-//
-//                // Append the data to the eventos array
-//            self.eventos.append(evento)
-//
-//            self.tableView.reloadData()
-//
-//        })
+        let db = Firestore.firestore()
+        db.collection("eventos").getDocuments() { (snapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                for document in snapshot!.documents {
+                    let titulo = document["titulo"] as! String
+                    let horario = document["horario"] as! String
+                    let local = document["local"] as! String
+                    self.eventos = [Evento(titulo: titulo, horario: horario, local: local, imagem: UIImage(imageLiteralResourceName: "IMG_1067"))]
+                    
+                }
+                self.tableView.reloadData()
+            }
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
