@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import FirebaseAuth
+import FirebaseCore
 
 class EventoViewController: UIViewController {
 
@@ -14,12 +17,15 @@ class EventoViewController: UIViewController {
     @IBOutlet weak var localEvento: UILabel!
     @IBOutlet weak var horarioEvento: UILabel!
     @IBOutlet weak var descricaoEvento: UILabel!
+    @IBOutlet weak var valorEvento: UILabel!
     
     let botaoFechar = BotoesFlutuantes.closeButton
     let botaoCompartilhar = BotoesFlutuantes.shareButton
     let botaoComprar = BotoesFlutuantes.buyButton
     
     var evento: Evento?
+    var eventoId: Int = 0
+    var imagemNome: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +36,8 @@ class EventoViewController: UIViewController {
         localEvento.text = evento?.local
         horarioEvento.text = evento?.horario
         descricaoEvento.text = evento?.descricao
+        valorEvento.text = "Valor: R$\(String(describing: evento?.valor))"
+        eventoId = evento!.eventoId
         
         view.addSubview(botaoComprar)
         view.addSubview(botaoFechar)
@@ -48,7 +56,28 @@ class EventoViewController: UIViewController {
     @objc private func buyButtonTapped() {
         let alert = UIAlertController(title: "Compra", message: "Ingresso comprado!", preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            let user = Auth.auth().currentUser!
+            let db = Firestore.firestore()
+            db.collection("ingressos").document("\(String(describing: self.eventoId))_\(user.uid)").setData([
+            
+                "titulo" : self.evento?.titulo as Any,
+                "local" : self.evento?.local as Any,
+                "horario" : self.evento?.horario as Any,
+                "descricao" : self.evento?.descricao as Any,
+                "valor" : self.evento?.valor as Any,
+                "uid" : user.uid as Any
+                //"imagem" : self.evento?.imagem as Any
+                
+            ]) { err in
+                if let err = err {
+                    print("Error writing doument \(err)")
+                } else {
+                    print("Document successfully written!")
+                }
+            }
+            
+        }))
         present(alert, animated: true)
     }
     

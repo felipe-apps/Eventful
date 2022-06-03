@@ -19,8 +19,6 @@ class PerfilViewController: UIViewController, UITabBarControllerDelegate {
     @IBOutlet weak var editarPerfilButton: UIButton!
     @IBOutlet weak var logOutButton: UIButton!
     
-    var teste: [String?] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -35,24 +33,34 @@ class PerfilViewController: UIViewController, UITabBarControllerDelegate {
         logOutButton.backgroundColor = .systemPink
         
         let db = Firestore.firestore()
-        let userId = Auth.auth().currentUser!.uid
+        let user = Auth.auth().currentUser!
         db.collection("usuarios").getDocuments() { (snapshot, error) in
             if let error = error {
                 print("Error getting documents: \(error)")
             } else {
-                if let currentUserDoc = snapshot?.documents.first(where: { ($0["uid"] as? String) == userId}) {
+                if let currentUserDoc = snapshot?.documents.first(where: { ($0["uid"] as? String) == user.uid}) {
                     let nome = currentUserDoc["nome"] as! String
                     let sobrenome = currentUserDoc["sobrenome"] as! String
                     self.nomeSobrenomeLabel.text = ("\(nome) \(sobrenome)")
-                    self.teste.append(nome)
+                    self.emailLabel.text = user.email
                 }
             }
         }
     }
     
     @IBAction func editarPerfilTapped(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Editando", message: "Editando usuário", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func logOutTapped(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Saindo", message: "Deseja mesmo sair?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
     }
 }

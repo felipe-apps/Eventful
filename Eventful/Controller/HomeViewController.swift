@@ -36,8 +36,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     let descricao = document["descricao"] as! String
                     let valor = document["valor"] as! Double
                     let imagemNome = document["imagem"] as! String
+                    let eventoId = document["eventoId"] as! Int
                     
-                    let evento = Evento(titulo: titulo, horario: horario, local: local, descricao: descricao, valor: valor, imagem: UIImage(imageLiteralResourceName: imagemNome))
+                    let evento = Evento(titulo: titulo, horario: horario, local: local, descricao: descricao, valor: valor, imagem: UIImage(imageLiteralResourceName: imagemNome), eventoId: eventoId)
                     self.eventos.append(evento)
                     
                 }
@@ -65,13 +66,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.deselectRow(at: indexPath, animated: true)
         
         let vc = storyboard?.instantiateViewController(withIdentifier: "EventoViewController") as? EventoViewController
-        vc?.evento = Evento(titulo: eventos[indexPath.row].titulo, horario: eventos[indexPath.row].horario, local: eventos[indexPath.row].local, descricao: eventos[indexPath.row].descricao, valor: eventos[indexPath.row].valor, imagem: eventos[indexPath.row].imagem)
-//        vc?.titulo = eventos[indexPath.row].titulo
-//        vc?.local = eventos[indexPath.row].local
-//        vc?.horario = eventos[indexPath.row].horario
-//        vc?.descricao = eventos[indexPath.row].descricao
-//        vc?.valor = eventos[indexPath.row].valor
-//        vc?.imagem = eventos[indexPath.row].imagem
+        vc?.evento = Evento(titulo: eventos[indexPath.row].titulo, horario: eventos[indexPath.row].horario, local: eventos[indexPath.row].local, descricao: eventos[indexPath.row].descricao, valor: eventos[indexPath.row].valor, imagem: eventos[indexPath.row].imagem, eventoId: eventos[indexPath.row].eventoId)
         self.navigationController?.present(vc!, animated: true)
     }
     
@@ -79,20 +74,4 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 120.0;
     }
     
-}
-
-extension UIImageView {
-    func loadFrom(URLAddress: String) {
-        guard let url = URL(string: URLAddress) else {
-            return
-        }
-        
-        DispatchQueue.main.async { [weak self] in
-            if let imageData = try? Data(contentsOf: url) {
-                if let loadedImage = UIImage(data: imageData) {
-                        self?.image = loadedImage
-                }
-            }
-        }
-    }
 }
