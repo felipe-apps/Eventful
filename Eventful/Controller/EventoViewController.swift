@@ -13,50 +13,53 @@ class EventoViewController: UIViewController {
     @IBOutlet weak var tituloEvento: UILabel!
     @IBOutlet weak var localEvento: UILabel!
     @IBOutlet weak var horarioEvento: UILabel!
+    @IBOutlet weak var descricaoEvento: UILabel!
     
-    private let comprarButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 60))
-        button.layer.cornerRadius = 30
-        button.backgroundColor = .systemRed
-        button.setTitle("Comprar ingresso", for: .normal)
-        button.setTitleColor(.systemBackground, for: .normal)
-        button.layer.shadowRadius = 10
-        button.layer.shadowOpacity = 0.3
-        
-        return button
-    }()
+    let botaoFechar = BotoesFlutuantes.closeButton
+    let botaoCompartilhar = BotoesFlutuantes.shareButton
+    let botaoComprar = BotoesFlutuantes.buyButton
     
-    var imagem = UIImage()
-    var titulo = ""
-    var local = ""
-    var horario = ""
+    var evento: Evento?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        imagemEvento.image = imagem
-        tituloEvento.text = titulo
-        localEvento.text = local
-        horarioEvento.text = horario
+        imagemEvento.image = evento?.imagem
+        tituloEvento.text = evento?.titulo
+        localEvento.text = evento?.local
+        horarioEvento.text = evento?.horario
+        descricaoEvento.text = evento?.descricao
         
-        view.addSubview(comprarButton)
-        comprarButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        view.addSubview(botaoComprar)
+        view.addSubview(botaoFechar)
+        view.addSubview(botaoCompartilhar)
+        botaoFechar.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
+        botaoCompartilhar.addTarget(self, action: #selector(shareButtonTapped), for: .touchUpInside)
+        botaoComprar.addTarget(self, action: #selector(buyButtonTapped), for: .touchUpInside)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        comprarButton.frame = CGRect(x: view.frame.size.width - 210, y: view.frame.size.height - 100 , width: 200, height: 60)
+        botaoCompartilhar.frame = CGRect(x: view.frame.size.width - 50, y: 10, width: 40, height: 40)
+        botaoComprar.frame = CGRect(x: view.frame.size.width - 210, y: view.frame.size.height - 100 , width: 200, height: 60)
     }
     
-    @IBAction func quitTapped(_ sender: UIButton) {
+    @objc private func buyButtonTapped() {
+        let alert = UIAlertController(title: "Compra", message: "Ingresso comprado!", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alert, animated: true)
+    }
+    
+    @objc private func closeButtonTapped() {
         self.dismiss(animated: true)
     }
     
-    @objc private func didTapButton() {
-        let alert = UIAlertController(title: "Add Something", message: "Floating button tapped", preferredStyle: .alert)
+    @objc private func shareButtonTapped() {
+        let alert = UIAlertController(title: "Compartilhar", message: "Ingresso compartilhado!", preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         present(alert, animated: true)
     }
     

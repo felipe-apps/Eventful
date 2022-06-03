@@ -10,6 +10,7 @@
 		0236C59F2846EFAB00E869D0 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0236C59E2846EFAA00E869D0 /* LogInViewController.swift */; };
 		0236C5A12846FC9500E869D0 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0236C5A02846FC9500E869D0 /* CadastroViewController.swift */; };
 		0236C5A42846FF1200E869D0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0236C5A32846FF1200E869D0 /* Utilities.swift */; };
+		0299A67528498BE00055641D /* BotoesFlutuantes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299A67428498BE00055641D /* BotoesFlutuantes.swift */; };
 		02C792782843DAFE007AAD12 /* IngressosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C792762843DAFE007AAD12 /* IngressosViewController.swift */; };
 		02C7927C2843DB2B007AAD12 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C7927A2843DB2B007AAD12 /* HomeViewController.swift */; };
 		02C792802843DBF1007AAD12 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C7927F2843DBF1007AAD12 /* PerfilViewController.swift */; };
@@ -35,6 +36,7 @@
 		0236C59E2846EFAA00E869D0 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		0236C5A02846FC9500E869D0 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		0236C5A32846FF1200E869D0 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		0299A67428498BE00055641D /* BotoesFlutuantes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotoesFlutuantes.swift; sourceTree = "<group>"; };
 		02C792762843DAFE007AAD12 /* IngressosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngressosViewController.swift; sourceTree = "<group>"; };
 		02C7927A2843DB2B007AAD12 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		02C7927F2843DBF1007AAD12 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				02E9C58728429D2F002A4253 /* Main.storyboard */,
 				02E9C58F28429D32002A4253 /* LaunchScreen.storyboard */,
 				02C792882844128E007AAD12 /* EventoTableViewCell.swift */,
+				0299A67428498BE00055641D /* BotoesFlutuantes.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				02E9C58428429D2F002A4253 /* SceneDelegate.swift in Sources */,
 				02F6DE482843C2E500B5AB8C /* Evento.swift in Sources */,
 				0236C5A12846FC9500E869D0 /* CadastroViewController.swift in Sources */,
+				0299A67528498BE00055641D /* BotoesFlutuantes.swift in Sources */,
 				02F6DE462843C24900B5AB8C /* Cartao.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
