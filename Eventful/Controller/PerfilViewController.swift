@@ -34,6 +34,8 @@ class PerfilViewController: UIViewController, UITabBarControllerDelegate {
         
         let db = Firestore.firestore()
         let user = Auth.auth().currentUser!
+        
+        // Recuperando dados do usuário e passando para a view
         db.collection("usuarios").getDocuments() { (snapshot, error) in
             if let error = error {
                 print("Error getting documents: \(error)")
@@ -48,6 +50,7 @@ class PerfilViewController: UIViewController, UITabBarControllerDelegate {
         }
     }
     
+    // TODO: Botão para editar o perfil do usuário
     @IBAction func editarPerfilTapped(_ sender: UIButton) {
         let alert = UIAlertController(title: "Editando", message: "Editando usuário", preferredStyle: .alert)
         
@@ -56,6 +59,7 @@ class PerfilViewController: UIViewController, UITabBarControllerDelegate {
         present(alert, animated: true, completion: nil)
     }
     
+    // TODO: Botão para sair da conta logada
     @IBAction func logOutTapped(_ sender: UIButton) {
         let alert = UIAlertController(title: "Saindo", message: "Deseja mesmo sair?", preferredStyle: .alert)
         

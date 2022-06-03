@@ -25,9 +25,9 @@ struct BotoesFlutuantes {
     public static let closeButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 10, y: 10, width: 40, height: 40))
         button.layer.cornerRadius = 20
-        button.backgroundColor = .label
+        button.backgroundColor = UIColor.lightGray
         button.setImage(UIImage(systemName: "chevron.down"), for: .normal)
-        button.tintColor = .systemBackground
+        button.tintColor = .label
         
         return button
     }()
@@ -35,9 +35,9 @@ struct BotoesFlutuantes {
     public static let shareButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         button.layer.cornerRadius = 20
-        button.backgroundColor = .label
+        button.backgroundColor = UIColor.lightGray
         button.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
-        button.tintColor = .systemBackground
+        button.tintColor = .label
         
         return button
     }()

@@ -10,7 +10,7 @@ import FirebaseFirestore
 import FirebaseAuth
 import FirebaseCore
 
-class EventoViewController: UIViewController {
+class EventoDetailViewController: UIViewController {
 
     @IBOutlet weak var imagemEvento: UIImageView!
     @IBOutlet weak var tituloEvento: UILabel!
@@ -30,15 +30,22 @@ class EventoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Recebendo dados do objeto evento que foi selecionado na TableView
         imagemEvento.image = evento?.imagem
         tituloEvento.text = evento?.titulo
         localEvento.text = evento?.local
         horarioEvento.text = evento?.horario
         descricaoEvento.text = evento?.descricao
-        valorEvento.text = "Valor: R$\(String(describing: evento?.valor))"
+        if evento?.valor == 0 {
+            valorEvento.text = "Gratuito"
+            valorEvento.textColor = .green
+        } else {
+            valorEvento.text = "Valor: R$\(String(format: "%.2f", evento!.valor))"
+        }
+        
         eventoId = evento!.eventoId
         
+        // Adicionando botões flutuantes na View
         view.addSubview(botaoComprar)
         view.addSubview(botaoFechar)
         view.addSubview(botaoCompartilhar)
@@ -47,14 +54,20 @@ class EventoViewController: UIViewController {
         botaoComprar.addTarget(self, action: #selector(buyButtonTapped), for: .touchUpInside)
     }
     
+    // Usa-se esse método para configurar a posição e o tamanho dos botões adicionados
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         botaoCompartilhar.frame = CGRect(x: view.frame.size.width - 50, y: 10, width: 40, height: 40)
         botaoComprar.frame = CGRect(x: view.frame.size.width - 210, y: view.frame.size.height - 100 , width: 200, height: 60)
     }
     
+    // Ao clicar no botão comprar, adiciona-se um novo registro á tabela "ingressos" no banco de dados Firebase
+    // Esse registro contém dados que foram puxados do evento selecionado
+    
     @objc private func buyButtonTapped() {
         let alert = UIAlertController(title: "Compra", message: "Ingresso comprado!", preferredStyle: .alert)
+        
+        
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             let user = Auth.auth().currentUser!
@@ -78,6 +91,7 @@ class EventoViewController: UIViewController {
             }
             
         }))
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .destructive, handler: nil))
         present(alert, animated: true)
     }
     

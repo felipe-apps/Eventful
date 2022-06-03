@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		021E2DB5284A33AA00F1E17C /* IngressoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021E2DB4284A33AA00F1E17C /* IngressoDetailViewController.swift */; };
 		0236C59F2846EFAB00E869D0 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0236C59E2846EFAA00E869D0 /* LogInViewController.swift */; };
 		0236C5A12846FC9500E869D0 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0236C5A02846FC9500E869D0 /* CadastroViewController.swift */; };
 		0236C5A42846FF1200E869D0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0236C5A32846FF1200E869D0 /* Utilities.swift */; };
@@ -18,7 +19,7 @@
 		02C792802843DBF1007AAD12 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C7927F2843DBF1007AAD12 /* PerfilViewController.swift */; };
 		02C792832843E7FD007AAD12 /* LoadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C792822843E7FD007AAD12 /* LoadData.swift */; };
 		02C792892844128E007AAD12 /* EventoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C792882844128E007AAD12 /* EventoTableViewCell.swift */; };
-		02D807C5284588DD006159A9 /* EventoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D807C4284588DC006159A9 /* EventoViewController.swift */; };
+		02D807C5284588DD006159A9 /* EventoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D807C4284588DC006159A9 /* EventoDetailViewController.swift */; };
 		02E846012848231C00D5A0F3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E846002848231C00D5A0F3 /* Constants.swift */; };
 		02E9C58228429D2F002A4253 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E9C58128429D2F002A4253 /* AppDelegate.swift */; };
 		02E9C58428429D2F002A4253 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E9C58328429D2F002A4253 /* SceneDelegate.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		021E2DB4284A33AA00F1E17C /* IngressoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngressoDetailViewController.swift; sourceTree = "<group>"; };
 		0236C59E2846EFAA00E869D0 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		0236C5A02846FC9500E869D0 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		0236C5A32846FF1200E869D0 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -46,7 +48,7 @@
 		02C7927F2843DBF1007AAD12 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		02C792822843E7FD007AAD12 /* LoadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadData.swift; sourceTree = "<group>"; };
 		02C792882844128E007AAD12 /* EventoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventoTableViewCell.swift; sourceTree = "<group>"; };
-		02D807C4284588DC006159A9 /* EventoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventoViewController.swift; sourceTree = "<group>"; };
+		02D807C4284588DC006159A9 /* EventoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventoDetailViewController.swift; sourceTree = "<group>"; };
 		02E846002848231C00D5A0F3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		02E9C57E28429D2F002A4253 /* Eventful.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventful.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02E9C58128429D2F002A4253 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -157,8 +159,9 @@
 				02C7927A2843DB2B007AAD12 /* HomeViewController.swift */,
 				02C792762843DAFE007AAD12 /* IngressosViewController.swift */,
 				02C7927F2843DBF1007AAD12 /* PerfilViewController.swift */,
-				02D807C4284588DC006159A9 /* EventoViewController.swift */,
+				02D807C4284588DC006159A9 /* EventoDetailViewController.swift */,
 				0236C59E2846EFAA00E869D0 /* LogInViewController.swift */,
+				021E2DB4284A33AA00F1E17C /* IngressoDetailViewController.swift */,
 				0236C5A02846FC9500E869D0 /* CadastroViewController.swift */,
 			);
 			path = Controller;
@@ -315,13 +318,14 @@
 				02F6DE4A2843C41200B5AB8C /* CompraIngresso.swift in Sources */,
 				02C792782843DAFE007AAD12 /* IngressosViewController.swift in Sources */,
 				02C792802843DBF1007AAD12 /* PerfilViewController.swift in Sources */,
+				021E2DB5284A33AA00F1E17C /* IngressoDetailViewController.swift in Sources */,
 				02F6DE442843B73600B5AB8C /* Usuario.swift in Sources */,
 				0236C5A42846FF1200E869D0 /* Utilities.swift in Sources */,
 				02C792832843E7FD007AAD12 /* LoadData.swift in Sources */,
 				02C7927C2843DB2B007AAD12 /* HomeViewController.swift in Sources */,
 				0299A6772849B6680055641D /* Ingresso.swift in Sources */,
 				0299A6792849B86A0055641D /* IngressoTableViewCell.swift in Sources */,
-				02D807C5284588DD006159A9 /* EventoViewController.swift in Sources */,
+				02D807C5284588DD006159A9 /* EventoDetailViewController.swift in Sources */,
 				02C792892844128E007AAD12 /* EventoTableViewCell.swift in Sources */,
 				0236C59F2846EFAB00E869D0 /* LogInViewController.swift in Sources */,
 				02E9C58428429D2F002A4253 /* SceneDelegate.swift in Sources */,

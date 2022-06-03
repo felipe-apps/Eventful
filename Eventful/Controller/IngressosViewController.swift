@@ -23,7 +23,7 @@ class IngressosViewController: UIViewController, UITabBarControllerDelegate, UIT
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
+        super.viewDidAppear(animated)
         
         self.tabBarController?.delegate = self
         
@@ -33,6 +33,7 @@ class IngressosViewController: UIViewController, UITabBarControllerDelegate, UIT
         let user = Auth.auth().currentUser!
         let db = Firestore.firestore()
         
+        // Recuperando dados da tabela "ingressos" do banco de dados
         db.collection("ingressos").whereField("uid", isEqualTo: "\(user.uid)").getDocuments() { (snapshot, error) in
             if let error = error {
                 print("Error getting documents: \(error)")
@@ -67,8 +68,17 @@ class IngressosViewController: UIViewController, UITabBarControllerDelegate, UIT
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "IngressoDetailViewController") as? IngressoDetailViewController
+        vc?.ingresso = Ingresso(titulo: ingressos[indexPath.row].titulo, horario: ingressos[indexPath.row].horario, local: ingressos[indexPath.row].local, descricao: ingressos[indexPath.row].descricao, valor: ingressos[indexPath.row].valor)
+        self.navigationController?.present(vc!, animated: true)
+    }
+    
+    // Setando o tamanho da célula do TableView
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120.0;
+        return 120
     }
     
 }

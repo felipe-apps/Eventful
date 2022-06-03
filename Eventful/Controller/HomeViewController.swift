@@ -65,13 +65,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "EventoViewController") as? EventoViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: "EventoDetailViewController") as? EventoDetailViewController
         vc?.evento = Evento(titulo: eventos[indexPath.row].titulo, horario: eventos[indexPath.row].horario, local: eventos[indexPath.row].local, descricao: eventos[indexPath.row].descricao, valor: eventos[indexPath.row].valor, imagem: eventos[indexPath.row].imagem, eventoId: eventos[indexPath.row].eventoId)
         self.navigationController?.present(vc!, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120.0;
+        return 120
     }
     
 }

@@ -56,6 +56,11 @@ class LogInViewController: UIViewController {
             Auth.auth().signIn(withEmail: email, password: senha) { result, error in
                 if error != nil {
                     print(error!.localizedDescription)
+                    let alert = UIAlertController(title: "Erro", message: "Senha ou e-mail incorretos!", preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                    
+                    self.present(alert, animated: true, completion: nil)
                 } else {
                     self.transitionToView()
                 }

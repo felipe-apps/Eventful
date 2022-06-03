@@ -11,6 +11,8 @@ import FirebaseCore
 import FirebaseStorage
 import FirebaseDatabase
 
+// TODO: Utilizar essa struct para receber dados do banco de dados
+
 //struct LoadData {
 //
 //    func fetchData() -> Data {
